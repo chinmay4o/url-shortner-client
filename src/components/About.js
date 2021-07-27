@@ -37,7 +37,7 @@ useEffect(() => {
 
 
   return (
-    <div className="parent">
+    <div className="parent p-3">
       <div
         className="container p-5 shadow-lg"
         style={{

@@ -5,7 +5,7 @@ const Nav = () => {
   return (
     <>
       <nav
-        className="navbar navbar-expand-lg navbar-dark bg-dark"
+        className="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg"
         style={{ "min-height": "70px" }}
       >
         <div className="container-fluid">
@@ -35,6 +35,12 @@ const Nav = () => {
                 <Link className="nav-link" to="/about">
                   {" "}
                   About
+                </Link>
+              </li>
+              <li className="nav-item pe-3">
+                <Link className="nav-link" to="/dashboard">
+                  {" "}
+                  Dashboard
                 </Link>
               </li>
               <li className="nav-item pe-3">

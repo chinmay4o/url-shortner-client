@@ -8,6 +8,8 @@ import Nav from "./components/Nav";
 import About from "./components/About";
 import Reset from "./components/Reset";
 import ResetMain from "./components/ResetMain";
+import Dashboard from "./components/Dashboard/Dashboard";
+import Redirect from "./components/Dashboard/Redirect";
 import {
   BrowserRouter as Router,
   Switch,
@@ -40,6 +42,12 @@ const App = () => {
         </Route>
         <Route path="/resetmain/:token">
           <ResetMain />
+        </Route>
+        <Route path="/dashboard">
+          <Dashboard />
+        </Route>
+        <Route path="/:code">
+          <Redirect />
         </Route>
       </Switch>
     </>
