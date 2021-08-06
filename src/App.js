@@ -46,7 +46,7 @@ const App = () => {
         <Route path="/dashboard">
           <Dashboard />
         </Route>
-        <Route path="/:code">
+        <Route path="/redirect/:code">
           <Redirect />
         </Route>
       </Switch>

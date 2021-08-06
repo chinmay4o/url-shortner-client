@@ -4,29 +4,31 @@ import {useParams} from "react-router-dom"
 const Redirect = () => {
 const {code} = useParams();
 
-async function redirect() {
+
+async function redirect1() {
     console.log(code);
     const response = await fetch(`http://localhost:5002/${code}` , {
-        // mode: "no-cors",
-        method : "GET",    
-        // credentials: "include",
-        // headers: {"Content-Type": "application/json"}  
+        method : "GET", 
     });
+
+const data = await response.json();
+console.log(data);
 
     if (response.status !== 200) {
         alert("Error");
       } else {
+          console.log("data" + data);
+          window.location.href = data.longUrl;
         alert("success");
         //   history.push("/");
       }
 }
 
 useEffect(() => {
-    redirect();
-    // return () => {
-    //     cleanup
-    // }
+    redirect1();
 }, []);
+
+
     return (
         <div>
             
