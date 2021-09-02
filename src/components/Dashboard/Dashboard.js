@@ -10,7 +10,7 @@ const Dashboard = ({ setUserData, userData, data1, setData1 }) => {
   const [longUrl, setLongUrl] = useState("");
   const [show, setShow] = useState("none");
   //toastify
-  const notify = () => toast("Wow so easy!");
+  const notify = () => toast("Yay! link shortned");
 
 //authenticating user
 async function authenticate1() {
@@ -68,13 +68,13 @@ async function authenticate1() {
     if (response.status === 200) {
       const da = await response.json();
       console.log(da);
-      notify();
+      // notify();
     }
   }
 
   useEffect(() => {
     authenticate1();
-  })
+  } , []) ; // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="dashboard">
