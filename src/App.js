@@ -11,10 +11,8 @@ import ResetMain from "./components/ResetMain";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Redirect from "./components/Dashboard/Redirect";
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 const App = () => {

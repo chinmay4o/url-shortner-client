@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {useHistory , useParams} from "react-router-dom";
+import { useParams} from "react-router-dom";
 
 const ResetMain = () => {
 const {token} = useParams();

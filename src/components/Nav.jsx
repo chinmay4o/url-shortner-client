@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Logout from "./Logout.js";
 
 const Nav = () => {
@@ -7,7 +7,7 @@ const Nav = () => {
     <>
       <nav
         className="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg"
-        style={{ "min-height": "70px" }}
+        style={{ "minHeight": "70px" }}
       >
         <div className="container-fluid nav1">
           <a className="navbar-brand" href="#">

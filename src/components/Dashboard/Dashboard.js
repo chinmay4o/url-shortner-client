@@ -11,7 +11,6 @@ const Dashboard = ({ setUserData, userData, data1, setData1 }) => {
   const [show, setShow] = useState("none");
   //toastify
   const notify = () => toast("Wow so easy!");
-  const notify1 = () => toast("user authenticated!");
 
 //authenticating user
 async function authenticate1() {

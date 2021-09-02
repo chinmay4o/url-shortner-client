@@ -2,9 +2,6 @@ import React from "react";
 // import Logout from "../Logout";
 import "./home.css";
 import hero from "../images/hero.jpg";
-import info1 from "../images/info1.png";
-import info2 from "../images/info2.png";
-import info3 from "../images/info3.png";
 import { useHistory } from "react-router-dom";
 
 const Home = () => {
