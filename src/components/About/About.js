@@ -60,7 +60,7 @@ const About = ({ userData, setUserData, data1 }) => {
 
   useEffect(() => {
     auth1();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="shadow-lg about-parent m-3 p-5">

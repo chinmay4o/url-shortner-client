@@ -7,12 +7,11 @@ const Nav = () => {
     <>
       <nav
         className="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg"
-        style={{ "minHeight": "70px" }}
+        style={{ minHeight: "70px" }}
       >
         <div className="container-fluid nav1">
-          <a className="navbar-brand" href="#">
-            <h2>TinyUrl</h2>
-          </a>
+          <h2 className="navbar-brand">TinyUrl</h2>
+
           <button
             className="navbar-toggler"
             type="button"
@@ -81,7 +80,6 @@ const Nav = () => {
                   </li>
                   <li className="mb-2">
                     <Logout />
-                   
                   </li>
                   <hr className="dropdown-divider" />
 

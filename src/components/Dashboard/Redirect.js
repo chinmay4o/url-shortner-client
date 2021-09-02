@@ -26,7 +26,7 @@ console.log(data);
 
 useEffect(() => {
     redirect1();
-}, []);
+}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
 
     return (
