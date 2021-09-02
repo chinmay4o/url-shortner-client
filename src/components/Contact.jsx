@@ -1,10 +1,21 @@
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 const Contact = () => {
   const [info, setInfo] = useState({
     email: "",
     message: "",
   });
+
+    // react toastify
+    const notify = () => {
+      toast("message sent");
+    };
+    const notify1 = (err) => {
+      toast(err);
+    };
 
   async function sendMail(e) {
     e.preventDefault();
@@ -15,14 +26,15 @@ const Contact = () => {
     });
 
     if (response.status !== 200) {
-      alert("Error");
+     return notify1("Error sending message, Please try sending again");
     } else {
-      alert("success");
+     return notify();
     }
   }
 
   return (
     <div className="parent">
+    <ToastContainer />
       <div className="container shadow p-5 form1">
         <h2 className="mb-4">Contact Us</h2>
         <form>

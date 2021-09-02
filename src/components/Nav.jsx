@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Logout from "./Logout.js";
 
 const Nav = () => {
   return (
@@ -8,9 +9,9 @@ const Nav = () => {
         className="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg"
         style={{ "min-height": "70px" }}
       >
-        <div className="container-fluid">
+        <div className="container-fluid nav1">
           <a className="navbar-brand" href="#">
-           <h2>TinyUrl</h2> 
+            <h2>TinyUrl</h2>
           </a>
           <button
             className="navbar-toggler"
@@ -23,24 +24,15 @@ const Nav = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <div
+            className="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
             <ul className="navbar-nav">
               <li className="nav-item  pe-3">
                 <Link className="nav-link" to="/">
                   {" "}
                   Home
-                </Link>
-              </li>
-              <li className="nav-item pe-3">
-                <Link className="nav-link" to="/about">
-                  {" "}
-                  About
-                </Link>
-              </li>
-              <li className="nav-item pe-3">
-                <Link className="nav-link" to="/dashboard">
-                  {" "}
-                  Dashboard
                 </Link>
               </li>
               <li className="nav-item pe-3">
@@ -61,6 +53,45 @@ const Nav = () => {
                   Contact Us
                 </Link>
               </li>
+
+              {/* dropdown */}
+              <div className="dropstart">
+                <button
+                  className="btn btnn btn-secondary dropdown-toggle"
+                  type="button"
+                  id="dropdownMenuButton2"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  More
+                </button>
+                <ul
+                  className="dropdown-menu dropdown-menu-dark"
+                  aria-labelledby="dropdownMenuButton2"
+                >
+                  <li className="mb-1">
+                    <Link to="/dashboard" className="dropdown-item" href="#">
+                      Dahsboard
+                    </Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/about" className="dropdown-item" href="#">
+                      Account
+                    </Link>
+                  </li>
+                  <li className="mb-2">
+                    <Logout />
+                   
+                  </li>
+                  <hr className="dropdown-divider" />
+
+                  {/* <li>
+                    <a className="dropdown-item inactive" href="#">
+                      Separated link
+                    </a>
+                  </li> */}
+                </ul>
+              </div>
             </ul>
           </div>
         </div>

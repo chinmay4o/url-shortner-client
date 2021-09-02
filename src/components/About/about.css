@@ -1,0 +1,53 @@
+.div1,
+.div2 {
+  padding: 20px;
+  border: 3px solid #fff;
+  border-radius: 8px;
+  height: 400px;
+}
+
+.div1{
+  overflow-y: auto;
+}
+
+.div3{
+  border: 1px solid grey;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.about-parent {
+  min-height: 600px;
+  min-width: 900px;
+  background: #212529;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.about-parent h2{
+  /* width: 50%; */
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.row{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+.linkColour{
+   color: rgb(11, 220, 244);
+}
+
+@media (max-width: 480px) {
+
+.about-parent {
+  min-height: calc(100vh - 70px);
+  width: 100vw;
+  background: #212529;
+  color: #fff;
+  border-radius: 10px;
+}
+}

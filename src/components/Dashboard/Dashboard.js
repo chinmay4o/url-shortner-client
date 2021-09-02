@@ -1,15 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./dashboard.css";
 import { Link } from "react-router-dom";
+import {useHistory} from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const Dashboard = () => {
+const Dashboard = ({ setUserData, userData, data1, setData1 }) => {
+  const history = useHistory();
   const [longUrl, setLongUrl] = useState("");
   const [show, setShow] = useState("none");
-  const [data1, setData1] = useState({});
+  //toastify
+  const notify = () => toast("Wow so easy!");
+  const notify1 = () => toast("user authenticated!");
 
+//authenticating user
+async function authenticate1() {
+  const response = await fetch("http://localhost:5002/dashboard", {
+    method: "GET",
+    headers : {
+      "Content-Type": "application/json",
+      Accept: "application/json"
+    },
+    credentials: "include"
+  });
+
+  if(response.status === 200) {
+    const user = await response.json();
+    console.log(user);
+    //  notify1();
+  } else {
+    history.push("/login");
+  }
+}
+
+  //on submit handler creating url short link
   async function urlShortner(e) {
     e.preventDefault();
-
     const response = await fetch("http://localhost:5002/shorten", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -17,16 +43,40 @@ const Dashboard = () => {
     });
 
     const data = await response.json();
+    console.log(data);
     setData1(data);
     console.log(data1);
     if (response.status !== 200) {
-      alert("Error");
-    } else {
-      setShow("block");
-      // alert("success");
-      //   history.push("/");
+      return alert("Error");
+    }
+    setShow("block");
+    updateUserProfile(data)
+    notify();
+  }
+
+  // patch request to update user profile
+  async function updateUserProfile(dd) {
+    const response = await fetch("http://localhost:5002/updates", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        id: userData._id,
+        shortUrl: dd.shortUrl,
+        longUrl: dd.longUrl,
+      }),
+    });
+
+    if (response.status === 200) {
+      const da = await response.json();
+      console.log(da);
+      notify();
     }
   }
+
+  useEffect(() => {
+    authenticate1();
+  })
+
   return (
     <div className="dashboard">
       {/* <div className="parent"> */}
@@ -44,10 +94,8 @@ const Dashboard = () => {
               onChange={(e) => setLongUrl(e.target.value)}
             />
           </div>
-
+          {/* providing data to screen shortuurl */}
           <div className="resultUrl" style={{ display: show }}>
-            {/* <h2>{show === "block" ? data1.shortUrl : null}</h2> */}
-            {/* {data1} */}
             <p>{data1 ? data1.shortUrl : "chinmay"}</p>
           </div>
 
@@ -58,6 +106,7 @@ const Dashboard = () => {
           >
             shorten
           </button>
+          <ToastContainer />
         </form>
         <div style={{ display: "flex" }}>
           <p className="link1">

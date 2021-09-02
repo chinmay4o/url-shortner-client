@@ -1,0 +1,131 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap");
+
+.home-parent{
+  width: 100%;
+  min-height: calc(100vh- 70px);
+}
+
+.hero{
+    width: 80%;
+    height: calc(100vh - 70px);
+    background: #fff;
+    display: flex;
+    font-family: montserrat;
+    margin: 0 auto;
+}
+
+/* hero section */
+.hero-div1 h1{
+    font-size: 4em;
+    font-weight: 800;
+}
+
+.hero-div1{
+    height: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.hero-div1 p{
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.hero-div2{
+   width: 80%;
+   background-position: cover;
+  overflow: hidden;
+}
+
+.hero-div2 img{
+  width: 800px;
+  height: 500px;
+   /* background-attachment: fixed; */
+   background-position: cover;
+}
+
+.btn2 {
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    margin-top: 40px;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-left: 40px;
+  }
+
+  /* info section */
+
+  .home-info{
+      width: 80%;
+      display: flex;
+      flex-direction: column
+  }
+
+  .home-info h2{
+      font-size: 3em;
+      font-weight: bold
+  }
+  .home-info .info-heading{
+     width: 100%;
+     margin: 0 auto;
+
+  }
+
+  .info-cards{
+      display: flex;
+      width: 90%;
+      height: 700px;
+      justify-content: space-between;
+  }
+
+ .info-1, .info-2, .info-3{
+      width: 300px;
+      height: 700px;
+      overflow: hidden;
+  }
+  
+@media (min-width: 0) and (max-width: 480px) {
+      
+      .hero{
+          width: 100%;
+          min-height: 100vh;
+          background: #fff;
+          display: flex;
+          flex-wrap: wrap;
+          font-family: montserrat;
+          padding: 20px;
+          margin: 0 auto;
+      }
+      
+      /* hero section */
+      .hero-div1 h1{
+          font-size: 3em;
+          font-weight: 700;
+      }
+      
+      .hero-div1{
+          height: 500px;
+          display: grid;
+          place-content: center;
+      }
+      
+      .hero-div1 p{
+          font-size: 1.6em;
+          font-weight: 600;
+      }
+      
+      .hero-div2{
+         width: 100%;
+         margin-top: -13vh;
+        /* overflow: hidden; */
+      }
+      
+      .hero-div2 img{
+        width: 100vw;
+        height: 50vh;
+      }
+      
+}

@@ -1,32 +1,58 @@
 import React, { useState } from "react";
-import { useHistory ,Link} from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
-    const [info, setInfo] = useState({
+  const [info, setInfo] = useState({
     email: "",
     password: "",
   });
+//  usehistory
+
+const history = useHistory();
+
+  // react toastify
+  const notify = () => {
+    toast("signup successfull");
+  };
+  const notify1 = (err) => {
+    toast(err);
+  };
 
   async function registerUser(e) {
     e.preventDefault();
-    const response = await fetch("http://localhost:5002/register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(info),
-    });
-
-    if (response.status !== 200) {
-      alert("Error");
+    var tester =
+      /^[-!#$%&'*+0-9=?A-Z^_a-z`{|}~](\.?[-!#$%&'*+0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
+    if (!info.email || !info.password) {
+      return notify1("Please fill in the details");
+    } else if (!tester.test(info.email)) {
+      return notify1("Please provide valid email address");
+    } else if(info.password.length < 6) {
+      return notify1("password must be 6 characters long")
     } else {
-      alert("success");
+      const response = await fetch("http://localhost:5002/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(info),
+      });
+
+      if (response.status !== 200) {
+        const err = await response.json();
+
+        notify1(err.message);
+      } else {
+        notify();
+        history.push("/login");
+      }
     }
   }
 
   return (
     <div className="parent">
-  
+      <ToastContainer />
       <div className="container shadow p-5 form1">
-      <h2 className="mb-5">Register Here</h2>
+        <h2 className="mb-5">Register Here</h2>
         <form>
           <div className="mb-3">
             <label for="exampleInputEmail1" className="form-label">
@@ -55,16 +81,16 @@ const Register = () => {
             />
           </div>
 
-          <button type="submit" className="btn btn-primary btn1"
-          onClick={registerUser}
+          <button
+            type="submit"
+            className="btn btn-primary btn1"
+            onClick={registerUser}
           >
             Register
           </button>
         </form>
 
-        <p
-        className="link1"
-        >
+        <p className="link1">
           {" "}
           <Link to="/login">Already have an account ?</Link>
         </p>

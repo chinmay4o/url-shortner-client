@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const history = useHistory();
@@ -9,26 +12,35 @@ const Login = () => {
     password: "",
   });
 
+  // react toastify
+  const notify = () => {
+    toast("login successfull");
+  };
+  const notify1 = (err) => {
+    toast(err);
+  };
+
   async function userLogin(e) {
     e.preventDefault();
     const response = await fetch("http://localhost:5002/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(info),
-      mode: "cors",
+      // mode: "cors",
       credentials: "include",
     });
 
     if (response.status !== 200) {
-      alert("Error");
+      notify1("invalid details");
     } else {
-      alert("welocome to home page");
-      history.push("/");
+      notify();
+      history.push("/dashboard");
     }
   }
 
   return (
     <div className="parent">
+      <ToastContainer />
       <div className="container shadow form1">
         <h2 className="mb-5">Login Here</h2>
         <form>
@@ -66,17 +78,16 @@ const Login = () => {
             Login
           </button>
         </form>
-        <div style={{ "display" : "flex"}}>
-        <p className="link1">
-          {" "}
-          <Link to="/reset">Forgot Password ?</Link>
-        </p>
-        <p className="link1">
-          {" "}
-          <Link to="/register">Create Account</Link>
-        </p>
+        <div style={{ display: "flex" }}>
+          <p className="link1">
+            {" "}
+            <Link to="/reset">Forgot Password ?</Link>
+          </p>
+          <p className="link1">
+            {" "}
+            <Link to="/register">Create Account</Link>
+          </p>
         </div>
-      
       </div>
     </div>
   );

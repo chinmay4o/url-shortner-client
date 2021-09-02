@@ -67,6 +67,11 @@ h2 {
   font-weight: 600;
 }
 
+.btnn {
+  font-family: montserrat;
+  font-weight: 600 !important;
+}
+
 .link1 {
   width: 70%;
   text-align: center;
@@ -78,6 +83,9 @@ h2 {
   font-weight: 600;
 }
 
+.nav1 {
+  width: 90% !important;
+}
 /* #navbarNav{
   justify-content: flex-end;
 } */
@@ -102,6 +110,10 @@ h2 {
 
   .btn1 {
     width: 95%;
+  }
+
+  .nav1 {
+    width: 100%;
   }
 }
 
