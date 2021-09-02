@@ -6,7 +6,7 @@ const Reset = () => {
 
   async function resetLink(e) {
     e.preventDefault();
-    const response = await fetch("http://localhost:5002/reset", {
+    const response = await fetch("https://url-shortner4o.herokuapp.com/reset", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),

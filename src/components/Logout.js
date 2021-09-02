@@ -16,7 +16,7 @@ const Logout = () => {
 
   async function logoutUser(e) {
     e.preventDefault();
-    const response = await fetch("http://localhost:5002/logout", {
+    const response = await fetch("https://url-shortner4o.herokuapp.com/logout", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

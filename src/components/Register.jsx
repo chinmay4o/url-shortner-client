@@ -31,7 +31,7 @@ const history = useHistory();
     } else if(info.password.length < 6) {
       return notify1("password must be 6 characters long")
     } else {
-      const response = await fetch("http://localhost:5002/register", {
+      const response = await fetch("https://url-shortner4o.herokuapp.com/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(info),

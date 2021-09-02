@@ -11,7 +11,7 @@ const {token} = useParams();
   async function resetPass(e) {
       e.preventDefault();
       info.resetToken = token;
-   const response = await fetch("http://localhost:5002/resetmain" , {
+   const response = await fetch("https://url-shortner4o.herokuapp.com/resetmain" , {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(info)

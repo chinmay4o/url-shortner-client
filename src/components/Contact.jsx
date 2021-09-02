@@ -19,7 +19,7 @@ const Contact = () => {
 
   async function sendMail(e) {
     e.preventDefault();
-    const response = await fetch("http://localhost:5002/contact", {
+    const response = await fetch("https://url-shortner4o.herokuapp.com/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(info),

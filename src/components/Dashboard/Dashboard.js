@@ -15,7 +15,7 @@ const Dashboard = ({ setUserData, userData, data1, setData1 }) => {
 
 //authenticating user
 async function authenticate1() {
-  const response = await fetch("http://localhost:5002/dashboard", {
+  const response = await fetch("https://url-shortner4o.herokuapp.com/dashboard", {
     method: "GET",
     headers : {
       "Content-Type": "application/json",
@@ -36,7 +36,7 @@ async function authenticate1() {
   //on submit handler creating url short link
   async function urlShortner(e) {
     e.preventDefault();
-    const response = await fetch("http://localhost:5002/shorten", {
+    const response = await fetch("https://url-shortner4o.herokuapp.com/shorten", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ longUrl }),
@@ -56,7 +56,7 @@ async function authenticate1() {
 
   // patch request to update user profile
   async function updateUserProfile(dd) {
-    const response = await fetch("http://localhost:5002/updates", {
+    const response = await fetch("https://url-shortner4o.herokuapp.com/updates", {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
