@@ -90,6 +90,10 @@ h2 {
   justify-content: flex-end;
 } */
 
+.navbar-brand{
+  font-size: 2rem !important;
+}
+
 @media (min-width: 0px) and (max-width: 480px) {
   .container {
     padding: 25px;

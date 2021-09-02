@@ -18,10 +18,6 @@ const Logout = () => {
     e.preventDefault();
     const response = await fetch("https://url-shortner4o.herokuapp.com/logout", {
       method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
       credentials: "include",
     });
 
