@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logout from "./Logout.js";
+// import Logout from "./Logout.js";
 
 const Nav = () => {
   return (
@@ -78,9 +78,9 @@ const Nav = () => {
                       Account
                     </Link>
                   </li>
-                  <li className="mb-2">
+                  {/* <li className="mb-2">
                     <Logout />
-                  </li>
+                  </li> */}
                   <hr className="dropdown-divider" />
 
                   {/* <li>
