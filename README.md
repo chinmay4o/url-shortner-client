@@ -2,7 +2,7 @@
 Tech Stack -
 
 React\
-Express JS (url-shortner4o.herokuapp.com)\
+Express JS (https://github.com/chinmay4o/url-shortner-server)\
 Mongoose + MongoDB
 
 
@@ -15,7 +15,7 @@ Toast, Error page\
 React JS \
 React Router\
 added mongodb backend for authentication\
-account page with details\
+account page with details
 
 ## Upcoming features-
 
