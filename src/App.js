@@ -49,6 +49,9 @@ const App = () => {
         <Route path="/:code">
           <Redirect />
         </Route>
+        <Route path="/*">
+          <Home />
+        </Route>
       </Switch>
     </>
   );
