@@ -1,7 +1,7 @@
 import React from "react";
 // import Logout from "../Logout";
 import "./home.css";
-import hero from "../images/hero.jpg";
+import hero1 from "../images/hero1.svg";
 import { useHistory } from "react-router-dom";
 
 const Home = () => {
@@ -23,7 +23,7 @@ const Home = () => {
         </div>
 
         <div className="hero-div2">
-          <img src={hero} alt="hero" className="mt-5" />
+          <img src={hero1} alt="hero" className="mt-5" />
         </div>
       </div>
 

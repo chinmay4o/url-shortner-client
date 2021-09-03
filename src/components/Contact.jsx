@@ -82,7 +82,7 @@ const Contact = () => {
             className="btn btn-primary btn1"
             onClick={sendMail}
           >
-            Contact Us
+            Submit
           </button>
         </form>
       </div>

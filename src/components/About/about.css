@@ -1,53 +1,123 @@
-.div1,
-.div2 {
-  padding: 20px;
-  border: 3px solid #fff;
-  border-radius: 8px;
-  height: 400px;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap");
+
+.about-parent{
+  width: 100%;
+  min-height: calc(100vh- 70px);
 }
 
-.div1{
+.about{
+    width: 80%;
+    height: calc(100vh - 70px);
+    background: #fff;
+    display: flex;
+    font-family: montserrat;
+    margin: 0 auto;
+}
+
+.about-links {
+  border: 2px solid #9b9b9b;
+  padding : 15px;
+  height: 500px;
+  width: 90%;
+  border-radius: 5px;
   overflow-y: auto;
 }
 
+.about-div1 h3{
+    font-size: 2.1em;
+    font-weight: 700;
+}
+
 .div3{
-  border: 1px solid grey;
-  padding: 10px;
-  border-radius: 8px;
+  margin-left: 20px;
 }
 
-.about-parent {
-  min-height: 600px;
-  min-width: 900px;
-  background: #212529;
-  color: #fff;
-  border-radius: 10px;
-}
-
-.about-parent h2{
-  /* width: 50%; */
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.row{
-    flex-wrap: wrap;
+.about-div1{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    gap: 10px;
-    box-sizing: border-box;
+    /* overflow: hidden; */
+
 }
 
-.linkColour{
-   color: rgb(11, 220, 244);
+.about-div1 p{
+    font-size: 1.5em;
+    font-weight: 600;
 }
 
-@media (max-width: 480px) {
-
-.about-parent {
-  min-height: calc(100vh - 70px);
-  width: 100vw;
-  background: #212529;
-  color: #fff;
-  border-radius: 10px;
+.about-div2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: cover;
+  overflow: hidden;
 }
+
+.about-div2 img{
+  width: 90%;
+  height: 90%;
+   background-position: cover;
+}
+
+.btn2 {
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    margin-top: 40px;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-left: 40px;
+  }
+
+
+  
+@media (min-width: 0) and (max-width: 550px) {
+      
+      .about{
+          width: 100%;
+          min-height: calc(100vh - 70px);
+          background: #fff;
+          display: flex;
+          flex-wrap: wrap;
+          font-family: montserrat;
+          padding: 20px;
+          margin: 0 auto;
+      }
+      
+      /* about section */
+      .about-div1 h2{
+          font-size: 2.4em;
+          font-weight: 700;
+      }
+      
+      .about-div1{
+          height: 500px;
+          margin: 0 auto;
+          /* height: 100%; */
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+      }
+      
+      .about-div1 p{
+          font-size: 1.6em;
+          font-weight: 600;
+      }
+      
+      .about-div2{
+         width: 100%;
+         margin-top: -13vh;
+        /* overflow: hidden; */
+      }
+      
+      .about-div2 img{
+        width: 100vw;
+        height: 50vh;
+      }
+      
 }

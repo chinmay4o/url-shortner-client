@@ -4,13 +4,14 @@ import "./about.css";
 import { useSelector, useDispatch } from "react-redux";
 import { rootUser1 } from "../../actions/index.js";
 import "react-toastify/dist/ReactToastify.css";
-import {ToastContainer , toast} from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
+import about from "../images/about.svg";
 
 const About = ({ userData, setUserData, data1 }) => {
-    ///notify user
-    function notify() {
-        return toast("user Authenticated");
-    }
+  ///notify user
+  function notify() {
+    return toast("user Authenticated");
+  }
   // const [userData , setUserData] = useState({});
   const history = useHistory();
   //redux mystate
@@ -33,12 +34,12 @@ const About = ({ userData, setUserData, data1 }) => {
       console.log(userData);
       console.log(data1);
 
-
       if (res.status !== 200) {
         const error = new Error(res.error);
         throw error;
-      }else{
-        notify();
+      } else {
+        console.log("auth from about")
+        // notify();
       }
     } catch (err) {
       console.log(err);
@@ -49,12 +50,23 @@ const About = ({ userData, setUserData, data1 }) => {
   //print user url_shortner
   function printUserUrls(ele, index) {
     return (
-       
-      <div key={index} className="div3 mt-2">
-       Long Url = <span className="linkColour">{ele.longUrl}</span>
+      <li key={index} className="div3 mt-2">
+        Long Url ={" "}
+        <span className="linkColour">
+          {" "}
+          <a href={ele.longUrl} target="_blank">
+            {ele.longUrl}
+          </a>{" "}
+        </span>
         <br />
-       Short Url = <span className="linkColour">{ele.shorten}</span>
-      </div>
+        Short Url ={" "}
+        <span className="linkColour">
+          {" "}
+          <a href={ele.shorten} target="_blank">
+            {ele.shorten}
+          </a>{" "}
+        </span>
+      </li>
     );
   }
 
@@ -63,17 +75,25 @@ const About = ({ userData, setUserData, data1 }) => {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div className="shadow-lg about-parent m-3 p-5">
-     <ToastContainer />
-      {/* <h2>Welcome {userData ? userData.email : <h2> Loading...</h2> }</h2> */}
-      {console.log(rootUser)}
-      <h2>Welcome {rootUser ? rootUser.name : <h2> Loading...</h2>}</h2>
-      <div className="row">
-        <div className="col-12 col-md-6 div1">
-        <h6 className="fw-bold fs-5">Find your previous urls here</h6>
-          {rootUser.myUrls ? rootUser.myUrls.map(printUserUrls) : "No URLs available"}
+    <div className="about-parent">
+      <div className="about">
+        <div className="about-div1">
+          <ToastContainer />
+          {console.log(rootUser)}
+          <h3>Welcome {rootUser ? rootUser.name : <h2> Loading...</h2>}</h3>
+          <div className="row about-links">
+            <ol className="col-12 ">
+              <h6 className="fw-bold fs-5">Find your previous urls here</h6>
+              {rootUser.myUrls
+                ? rootUser.myUrls.map(printUserUrls)
+                : "No URLs available"}
+            </ol>
+          </div>
         </div>
-        {/* <div className="col-12 col-md-6 div2"></div> */}
+
+        <div className="about-div2">
+          <img src={about} alt="hero" />
+        </div>
       </div>
     </div>
   );

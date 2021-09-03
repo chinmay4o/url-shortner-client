@@ -1,32 +1,123 @@
-.dashboard {
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap");
+
+.dashboard-parent{
   width: 100%;
-  min-height: calc(100vh - 70px);
+  min-height: calc(100vh- 70px);
+}
+
+.dashboard{
+    width: 80%;
+    height: calc(100vh - 70px);
+    background: #fff;
+    display: flex;
+    font-family: montserrat;
+    margin: 0 auto;
+}
+
+/* dashboard section */
+.dashboard-div1{
+  width: 80%;
+
+}
+
+.dashboard-form{
+  width: 90%;
+
+}
+.dashboard-div1 h2{
+    font-size: 3em;
+    font-weight: 800;
+}
+
+.dashboard-div1{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-div1 p{
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.input-bor{
+  border: 2px solid grey;
+}
+
+.dashboard-div2{
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: #000000;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23222' stroke-width='10' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
-}
-.dashboard {
-  width: 100%;
-  min-height: calc(100vh - 70px);
-  display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: #212529;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250' viewBox='0 0 20 20'%3E%3Cg %3E%3Cpolygon fill='%23505050' points='20 10 10 0 0 0 20 20'/%3E%3Cpolygon fill='%23505050' points='0 10 0 20 10 20'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: cover;
+  overflow: hidden;
 }
 
-
-.resultUrl{
-  min-height: 50px;
-  width: 100%;
-  background-color: rgb(245, 255, 47);
-  color: black;
-  /* font-size: 1.5em; */
-  border-radius: 8px;
+.dashboard-div2 img{
+  width: 800px;
+  height: 500px;
+   /* background-attachment: fixed; */
+   background-position: cover;
 }
 
-@media (min-width:0px) and (max-width:480px){
+.btn2 {
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    margin-top: 40px;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-left: 40px;
+  }
+
+
   
+@media (min-width: 0) and (max-width: 550px) {
+      
+      .dashboard{
+          width: 100%;
+          min-height: calc(100vh - 70px);
+          background: #fff;
+          display: flex;
+          flex-wrap: wrap;
+          font-family: montserrat;
+          padding: 20px;
+          margin: 0 auto;
+      }
+      
+      /* dashboard section */
+      .dashboard-div1 h2{
+          font-size: 2.4em;
+          font-weight: 700;
+      }
+      
+      .dashboard-div1{
+          height: 500px;
+          margin: 0 auto;
+          /* height: 100%; */
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+      }
+      
+      .dashboard-div1 p{
+          font-size: 1.6em;
+          font-weight: 600;
+      }
+      
+      .dashboard-div2{
+         width: 100%;
+         margin-top: -13vh;
+        /* overflow: hidden; */
+      }
+      
+      .dashboard-div2 img{
+        width: 100vw;
+        height: 50vh;
+      }
+      
 }
