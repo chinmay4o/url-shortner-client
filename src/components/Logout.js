@@ -16,18 +16,25 @@ const Logout = () => {
 
   async function logoutUser(e) {
     e.preventDefault();
-    const response = await fetch("https://url-shortner4o.herokuapp.com/logout", {
-      method: "GET",
-      credentials: "include",
-    });
+    const response = await fetch(
+      "https://url-shortner4o.herokuapp.com/logout",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        credentials: "include",
+      }
+    );
 
     console.log("chinmay");
 
     if (response.status !== 200) {
-     return notify1("OOPS unable to logout")
+      return notify1("OOPS unable to logout");
     } else {
       notify();
-     return history.push("/login");
+      return history.push("/login");
     }
   }
 

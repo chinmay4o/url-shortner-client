@@ -18,7 +18,8 @@
 .about-links {
   border: 2px solid #9b9b9b;
   padding : 15px;
-  height: 500px;
+  min-height: 500px;
+  max-height: 500px;
   width: 90%;
   border-radius: 5px;
   overflow-y: auto;
@@ -40,7 +41,6 @@
     align-items: center;
     justify-content: center;
     /* overflow: hidden; */
-
 }
 
 .about-div1 p{
@@ -88,30 +88,42 @@
           margin: 0 auto;
       }
       
+.about-div1{
+  width: 97%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* overflow: hidden; */
+}
+
+
+.about-links {
+  border: 2px solid #9b9b9b;
+  padding : 10px;
+  min-height: 300px;
+  width: 90%;
+  border-radius: 5px;
+  overflow-y: auto;
+}
+
       /* about section */
-      .about-div1 h2{
-          font-size: 2.4em;
+      .about-div1 h3{
+        text-align: center;
+          font-size: 1.8em;
           font-weight: 700;
+          margin-bottom: 10px;
       }
       
-      .about-div1{
-          height: 500px;
-          margin: 0 auto;
-          /* height: 100%; */
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-      }
-      
+  
       .about-div1 p{
-          font-size: 1.6em;
+          font-size: 1em;
           font-weight: 600;
       }
       
       .about-div2{
          width: 100%;
-         margin-top: -13vh;
+         margin-top: 0;
         /* overflow: hidden; */
       }
       

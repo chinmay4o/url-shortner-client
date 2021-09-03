@@ -96,6 +96,7 @@
       
       .dashboard-div1{
           height: 500px;
+          width: 97%;
           margin: 0 auto;
           /* height: 100%; */
           display: flex;
