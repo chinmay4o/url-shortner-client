@@ -1,25 +1,25 @@
-Tiny URL
+# Tiny URL
 Tech Stack -
 
-React
-Express JS (https://github.com/AnkitaBagale/uandistore/tree/sm-development)
+React\
+Express JS (url-shortner4o.herokuapp.com)\
 Mongoose + MongoDB
-Functionalities-
-
-login, signup for users
-account page to find past activities
-jwt authentication
-Responsive design
-Toast, Error page
-React JS -
 
 
-React Router
-added mongodb backend for authentication
-account page with details
-Upcoming features-
+## Functionalities -
+login, signup for users\
+account page to find past activities\
+jwt authentication\
+Responsive design\
+Toast, Error page\
+React JS \
+React Router\
+added mongodb backend for authentication\
+account page with details\
 
-User details edit section in settings section
-Redux State management
-Logout functionality
-https://urlshortner4o.netlify.app
+## Upcoming features-
+
+User details edit section in settings section\
+Redux State management\
+Logout functionality\
+### https://urlshortner4o.netlify.app
