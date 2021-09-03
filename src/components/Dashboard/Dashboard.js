@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./dashboard.css";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -130,43 +130,3 @@ const Dashboard = ({ setUserData, userData, data1, setData1 }) => {
 };
 
 export default Dashboard;
-
-{
-  /* <div className="dashboard">
-      <div className="dashboard-container shadow form1">
-        <h2 className="mb-5">shorten your URL</h2>
-        <form>
-          <div className="mb-3">
-            <label for="exampleInputEmail1" className="form-label">
-              paste your url
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="exampleInputEmail1"
-              onChange={(e) => setLongUrl(e.target.value)}
-            />
-          </div>
-           providing data to screen shortuurl 
-          <div className="resultUrl" style={{ display: show }}>
-            <p>{data1 ? data1.shortUrl : "chinmay"}</p>
-          </div>
-
-          <button
-            type="submit"
-            className="btn btn-primary btn1"
-            onClick={urlShortner}
-          >
-            shorten
-          </button>
-          <ToastContainer />
-        </form>
-        <div style={{ display: "flex" }}>
-          <p className="link1">
-            {" "}
-            <Link to="/register">Don't have an account ? </Link>
-          </p>
-        </div>
-      </div>
-    </div>*/
-}

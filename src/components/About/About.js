@@ -4,14 +4,14 @@ import "./about.css";
 import { useSelector, useDispatch } from "react-redux";
 import { rootUser1 } from "../../actions/index.js";
 import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer, toast } from "react-toastify";
+// import { ToastContainer, toast } from "react-toastify";
 import about from "../images/about.svg";
 
 const About = ({ userData, setUserData, data1 }) => {
   ///notify user
-  function notify() {
-    return toast("user Authenticated");
-  }
+  // function notify() {
+  //   return toast("user Authenticated");
+  // }
   // const [userData , setUserData] = useState({});
   const history = useHistory();
   //redux mystate
@@ -54,7 +54,7 @@ const About = ({ userData, setUserData, data1 }) => {
         Long Url ={" "}
         <span className="linkColour">
           {" "}
-          <a href={ele.longUrl} target="_blank">
+          <a href={ele.longUrl} rel="noopener noreferrer" target="_blank">
             {ele.longUrl}
           </a>{" "}
         </span>
@@ -62,7 +62,7 @@ const About = ({ userData, setUserData, data1 }) => {
         Short Url ={" "}
         <span className="linkColour">
           {" "}
-          <a href={ele.shorten} target="_blank">
+          <a href={ele.shorten} rel="noopener noreferrer" target="_blank">
             {ele.shorten}
           </a>{" "}
         </span>
@@ -78,7 +78,7 @@ const About = ({ userData, setUserData, data1 }) => {
     <div className="about-parent">
       <div className="about">
         <div className="about-div1">
-          <ToastContainer />
+          {/* <ToastContainer /> */}
           {console.log(rootUser)}
           <h3>Welcome {rootUser ? rootUser.name : <h2> Loading...</h2>}</h3>
           <div className="row about-links">
