@@ -14,10 +14,26 @@ const Login = () => {
 
   // react toastify
   const notify = () => {
-    toast("login successfull");
+    toast("login successfull", {
+      position: "bottom-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
   const notify1 = (err) => {
-    toast(err);
+    toast(err, {
+      position: "bottom-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
 
   async function userLogin(e) {
@@ -40,7 +56,17 @@ const Login = () => {
 
   return (
     <div className="parent">
-      <ToastContainer />
+      <ToastContainer
+        position="bottom-right"
+        autoClose={1500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <div className="container shadow form1">
         <h2 className="mb-5">Login Here</h2>
         <form>

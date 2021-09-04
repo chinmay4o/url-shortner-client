@@ -8,16 +8,32 @@ const Register = () => {
     email: "",
     password: "",
   });
-//  usehistory
+  //  usehistory
 
-const history = useHistory();
+  const history = useHistory();
 
   // react toastify
   const notify = () => {
-    toast("signup successfull");
+    toast("signup successfull", {
+      position: "bottom-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
   const notify1 = (err) => {
-    toast(err);
+    toast(err, {
+      position: "bottom-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
 
   async function registerUser(e) {
@@ -28,14 +44,17 @@ const history = useHistory();
       return notify1("Please fill in the details");
     } else if (!tester.test(info.email)) {
       return notify1("Please provide valid email address");
-    } else if(info.password.length < 6) {
-      return notify1("password must be 6 characters long")
+    } else if (info.password.length < 6) {
+      return notify1("password must be 6 characters long");
     } else {
-      const response = await fetch("https://url-shortner4o.herokuapp.com/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(info),
-      });
+      const response = await fetch(
+        "https://url-shortner4o.herokuapp.com/register",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(info),
+        }
+      );
 
       if (response.status !== 200) {
         const err = await response.json();
@@ -50,7 +69,17 @@ const history = useHistory();
 
   return (
     <div className="parent">
-      <ToastContainer />
+      <ToastContainer
+        position="bottom-right"
+        autoClose={1500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <div className="container shadow p-5 form1">
         <h2 className="mb-5">Register Here</h2>
         <form>

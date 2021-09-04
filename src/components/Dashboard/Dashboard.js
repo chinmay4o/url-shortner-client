@@ -6,13 +6,21 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import dash from "../images/dash.svg";
 
-
 const Dashboard = ({ setUserData, userData, data1, setData1 }) => {
   const history = useHistory();
   const [longUrl, setLongUrl] = useState("");
   const [show, setShow] = useState("none");
   //toastify
-  const notify = () => toast("Yay! link shortned");
+  const notify = () =>
+    toast("Yay! link shortned", {
+      position: "bottom-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
 
   //authenticating user
   async function authenticate1() {
@@ -91,34 +99,44 @@ const Dashboard = ({ setUserData, userData, data1, setData1 }) => {
     <div className="dashboard-parent">
       <div className="dashboard">
         <div className="dashboard-div1">
-        <h2 className="mb-5">Shorten your URL</h2>
-        <form className="dashboard-form">
-          <div>
-            <label for="exampleInputEmail1" className="form-label">
-              Paste your URL
-            </label>
-            <input
-              type="text"
-              className="form-control input-bor"
-              placeholder="put your URl here"
-              id="exampleInputEmail1"
-              onChange={(e) => setLongUrl(e.target.value)}
-            />
-          </div>
-           {/* providing data to screen shortuurl  */}
-          <div className="resultUrl" style={{ display: show }}>
-            <p>{data1 ? data1.shortUrl : "chinmay"}</p>
-          </div>
+          <h2 className="mb-5">Shorten your URL</h2>
+          <form className="dashboard-form">
+            <div>
+              <label for="exampleInputEmail1" className="form-label">
+                Paste your URL
+              </label>
+              <input
+                type="text"
+                className="form-control input-bor"
+                placeholder="put your URl here"
+                id="exampleInputEmail1"
+                onChange={(e) => setLongUrl(e.target.value)}
+              />
+            </div>
+            {/* providing data to screen shortuurl  */}
+            <div className="resultUrl" style={{ display: show }}>
+              <p>{data1 ? data1.shortUrl : "chinmay"}</p>
+            </div>
 
-          <button
-            type="submit"
-            className="btn btn-primary btn1"
-            onClick={urlShortner}
-          >
-            shorten
-          </button>
-          <ToastContainer />
-        </form>
+            <button
+              type="submit"
+              className="btn btn-primary btn1"
+              onClick={urlShortner}
+            >
+              shorten
+            </button>
+            <ToastContainer
+              position="bottom-right"
+              autoClose={1500}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+            />
+          </form>
         </div>
 
         <div className="dashboard-div2">
